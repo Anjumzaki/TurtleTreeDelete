@@ -1,0 +1,21 @@
+.shad{
+ background: white;
+ padding-top: 5px;
+ -webkit-box-shadow: 0px 1px 16px -9px rgba(0,0,0,0.81); 
+box-shadow: 0px 1px 16px -9px rgba(0,0,0,0.81);
+}
+.shad video{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black
+}
+.videoText{
+  font: normal normal normal 20px/1.4em 'Avenir LT Std 35 Light',sans-serif;
+font-weight: bold
+}
+
+@media screen and (max-width: 750px) {
+  .videoText{
+    font: normal normal normal 13px/1.4em 'Avenir LT Std 35 Light',sans-serif;
+  font-weight: bold
+  }
+}

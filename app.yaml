@@ -1,0 +1,22 @@
+runtime: nodejs
+env: flex
+
+handlers:
+- url: /.*
+  script: IGNORED
+  secure: always
+  
+# manual_scaling:
+#   instances: 1
+
+# resources:
+#   cpu: .5
+#   memory_gb: 0.5
+#   disk_size_gb: 10
+
+# handlers:
+#   -url: /
+#     static_files: client/build/index.html
+#     upload: client/build/index.html
+#   -url: /
+#     static_dir: client/build

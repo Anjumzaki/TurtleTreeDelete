@@ -1,0 +1,22 @@
+.home-container {
+    background-image: url("./milk.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+@font-face {
+    font-family: "LuloCleanW01-OneBold";
+    src: url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.eot");
+    src: url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.woff") format("woff"), url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/39a2c7f346d5cfae7045aeb2fb50d9ad.svg#LuloCleanW01-OneBold") format("svg");
+}
+@font-face {
+    font-family: 'Avenir LT Std 35 Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Avenir LT Std 35 Light'), url('../../assets/fotns/AvenirLTStd-Light.woff') format('woff');
+    }
+    
+body {
+    font-family: 'LuloCleanW01-OneBold', sans-serif !important
+}

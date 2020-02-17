@@ -1,0 +1,10 @@
+.loginCard{
+    -webkit-box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+background-color: '#484848' ;
+text-align: center;
+margin: auto;
+padding:50px;
+border-radius: 5;
+}

@@ -1,0 +1,54 @@
+.uploadCards{
+    -webkit-box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+    padding: 20px;
+    margin: 20px;
+}
+.imageTem{
+    width: 100%;
+    height: 400px;
+    background-color: #e4e3e3;
+    margin-bottom: 50px;
+}
+.inForms{
+    padding: 7px 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: silver;
+
+}
+.buttonss{
+    text-align:right;
+    margin-right: 20px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+
+}
+.buttonss button {
+    font-size: 14px;
+    margin-left: 20px;
+}
+.sidebarmenu{
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+}
+.sideMenuLinks{
+    padding-top: 20px  !important;
+    padding-bottom: 20px  !important;
+    border-bottom: 1px solid white;
+    text-align: center;
+    color: white;
+    background-color: gray;
+    cursor: pointer;
+
+}
+.mainAdminText{
+    padding: 5px;
+    text-align: center;
+    color: gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,11 @@
+.cardPara{
+    font-family: 'Avenir LT Std 35 Light',sans-serif;
+    font-size: 14 !important;
+}
+.myCard{
+    margin-top: 25px !important;
+
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(189,189,189,1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(189,189,189,1);
+    box-shadow: 0px 0px 8px 0px rgba(189,189,189,1);
+}

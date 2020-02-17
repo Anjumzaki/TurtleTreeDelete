@@ -1,0 +1,59 @@
+.abHead p.conP{
+    padding-top: 7%;
+}
+.abhead2{
+    padding-top:25% !important;
+}
+.conP1{
+    padding-top: 4% !important
+}
+.contactDiv{
+    padding-bottom: 20%;
+}
+.milkBack1{
+    width: 50% !important;
+    margin: auto;
+    text-align: right
+}
+.milkBack{
+    width: 65%;
+}
+.contI{
+    width: 100%;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-width: 2px;
+    background-color: transparent;
+    box-sizing: border-box !important;
+    color: #000000;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 1);
+    padding: 5px;
+    margin: 4px;
+    padding-left: 8px;
+ 
+    font: normal normal normal 15px/1.4em 'Avenir LT Std 35 Light',sans-serif;
+}
+textarea.contI{
+    padding: 10px;
+}
+.btnSb{
+    font: normal normal normal 15px/1.4em 'Avenir LT Std 35 Light',sans-serif;
+    background-color: rgba(0, 0, 0, 1) !important;
+    color: white !important;
+    border-radius: 0px !important;
+    padding: 5px !important;
+    transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+    width: 150px;
+    border:2px solid rgba(0, 0, 0, 1) !important
+}
+.btnSb:hover{
+    color: rgba(0, 0, 0, 1) !important;
+    background-color: white !important
+}
+@media screen and (max-width: 750px) {
+    .milkBack{
+        width: 100%;
+    }
+  }
