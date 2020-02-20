@@ -38,10 +38,13 @@ export default class AdminNews extends React.Component {
       postingError: "",
       linked: "AddNews",
       news: [],
-      names: []
+      names: [],
+      newHeading: ""
     };
     this.valueChanged = this.valueChanged.bind(this);
     this.valueChanged1 = this.valueChanged1.bind(this);
+    this.valueChanged3 = this.valueChanged3.bind(this);
+
     this.handleChange = this.handleChange.bind(this);
   }
   getNews = () => {
@@ -134,10 +137,14 @@ export default class AdminNews extends React.Component {
       alert("One Paragraph is necessary");
     }
   }
-
   valueChanged(event) {
     this.setState({
       heading: event.target.value //set this.state.value to the input's value
+    });
+  }
+  valueChanged3(event) {
+    this.setState({
+      newHeading: event.target.value //set this.state.value to the input's value
     });
   }
 
@@ -161,39 +168,18 @@ export default class AdminNews extends React.Component {
               isPic: para.isPic
             };
           });
-          // console.log(paragraphs,{
-          //     heading: this.state.heading,
-          //     mainDetail: this.state.mainDetail,
-          //     mainPic: this.state.imagePreviewUrl,
-          //     paragraphs: paragraphs,
-          // })
           axios
             .post("https://turtletreelabs.com/api/post/news", {
               heading: this.state.heading,
               mainDetail: this.state.mainDetail,
-              // mainPic: this.state.imagePreviewUrl,
-              paragraphs: paragraphs
+              paragraphs: paragraphs,
+              newHeading: this.state.newHeading
             })
             .then(resp => {
               console.log(resp);
-              this.setState({
-                loading: false
-              });
-              alert("News posted");
               var name = this.state.heading.split(" ").join("-");
               console.log("name", name);
               this.imageUpload(name, this.state.file, 1);
-              // var ind =2
-              for (var i = 0; i < this.state.paragraphs.length; i++) {
-                if (this.state.paragraphs[i].imagePreviewUrl !== "") {
-                  console.log(
-                    "paraaaaaaaaaaaaa file",
-                    this.state.paragraphs[i].file
-                  );
-                  this.imageUpload(name, this.state.paragraphs[i].file, i + 2);
-                  // ind=ind+1
-                }
-              }
             })
             .catch(err => console.log(err));
         } else {
@@ -232,6 +218,21 @@ export default class AdminNews extends React.Component {
         .post("https://turtletreelabs.com/upload", formData, config)
         .then(response => {
           console.log(response);
+          alert("News posted");
+          this.setState({
+            loading: false,
+            file: "",
+            imagePreviewUrl: "",
+            heading: "",
+            mainDetail: "",
+            paragraphs: [
+              {
+                heading: "",
+                paragraph: ""
+              }
+            ]
+          });
+          console.log(this.state);
         })
         .catch(error => {
           console.log(error);
@@ -248,7 +249,7 @@ export default class AdminNews extends React.Component {
     let { imagePreviewUrl } = this.state;
     console.log("state", this.state);
     return (
-      <div style={{ backgroundColor: "white" }}>
+      <div style={{ backgroundColor: "white", fontFamily: "sans-serif" }}>
         {!this.state.loggedIn ? (
           <div
             style={{
@@ -342,7 +343,7 @@ export default class AdminNews extends React.Component {
                   <div style={{ width: "100%" }}>
                     <h5>Heading Details</h5>
                     <div className="uploadCards">
-                      <h6>1-Header Image (800 X 400)</h6>
+                      <h6>1-News Image (800 X 400)</h6>
                       {this.state.imagePreviewUrl ? (
                         <img
                           className="imageTem"
@@ -363,7 +364,7 @@ export default class AdminNews extends React.Component {
                           <h6
                             style={{ marginTop: "20px", marginBottom: "20px" }}
                           >
-                            2-Header Title
+                            2-News URL (Only Alphabets)
                           </h6>
                           <div>
                             <textarea
@@ -374,22 +375,19 @@ export default class AdminNews extends React.Component {
                               className="inForms"
                             />
                           </div>
-                          <h6
-                            style={{ marginTop: "20px", marginBottom: "20px" }}
-                          >
-                            3-Paragraph
-                          </h6>
-                          <div>
-                            <textarea
-                              value={this.state.mainDetail}
-                              type="text"
-                              onChange={this.valueChanged1}
-                              cols="50"
-                              rows="8"
-                              className="inForms"
-                            />
-                          </div>
                         </form>
+                        <h6 style={{ marginTop: "20px", marginBottom: "20px" }}>
+                          3-Heading
+                        </h6>
+                        <div>
+                          <textarea
+                            value={this.state.mainDetail}
+                            type="text"
+                            onChange={this.valueChanged1}
+                            cols="50"
+                            className="inForms"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -405,33 +403,12 @@ export default class AdminNews extends React.Component {
                             onChange={e => this.handleParaTitle(e, i)}
                             cols="50"
                             className="inForms"
+                            value={this.state.paragraphs[i].heading}
+
                           />
                         </div>
                         <h6 style={{ marginTop: "20px", marginBottom: "20px" }}>
-                          2-Paragraph image (if any)
-                        </h6>
-                        {this.state.paragraphs[i].imagePreviewUrl ? (
-                          <img
-                            className="imageTem"
-                            src={this.state.paragraphs[i].imagePreviewUrl}
-                          />
-                        ) : (
-                          <div className="imageTem"></div>
-                        )}
-                        <div className="previewComponent">
-                          <form onSubmit={e => this._handleSubmit(e, i)}>
-                            <input
-                              className="fileInput"
-                              type="file"
-                              accept="image/jpeg"
-                              onChange={e => {
-                                this._handleImageChangePara(e, i);
-                              }}
-                            />
-                          </form>
-                        </div>
-                        <h6 style={{ marginTop: "20px", marginBottom: "20px" }}>
-                          3-Paragraph
+                          2-Paragraph
                         </h6>
                         <div>
                           <textarea
@@ -439,6 +416,7 @@ export default class AdminNews extends React.Component {
                             cols="50"
                             rows="10"
                             className="inForms"
+                            value={this.state.paragraphs[i].paragraph}
                           />
                         </div>
                         <div style={{ textAlign: "right" }}>

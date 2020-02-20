@@ -31,6 +31,7 @@ export default class News extends React.Component  {
             console.log("called")
              this.state.names.push(news.heading.split(' ').join('-'))
         })
+        console.log('I am the news')
     }
     render(){
         console.log("state",this.state)

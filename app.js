@@ -147,7 +147,6 @@ app.post("/postmessage", (req, res) => {
 
 
 app.get('/get/news', (req, res) => {
-
   News.find()
   .then(news => {
     res.json(news);
@@ -165,7 +164,6 @@ app.get('/get/one/news/:id', (req, res) => {
   })
   .catch(err => res.status(404).json(err));
 }
-
 );
 app.post('/api/delete/news/:id', async (req, res) => {
   console.log(req.params.id)
@@ -187,8 +185,8 @@ app.post('/api/post/news', async (req, res) => {
   console.log(req.body)
   const news = new News({
     heading: req.body.heading,
+    newHeading: req.body.newHeading,
     mainDetail: req.body.mainDetail,
-    // mainPic: req.body.mainPic,
     paragraphs: req.body.paragraphs
   });
   news.save(function (err) {

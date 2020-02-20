@@ -9,9 +9,9 @@ const NewsSchema = new Schema({
   mainDetail: {
     type: String
   },
-  // mainPic: {
-  //   type: String
-  // },
+  newHeading: {
+    type: String
+  },
   paragraphs: [
     {
       heading: {
