@@ -48,8 +48,8 @@ export default class News extends React.Component  {
                             src={'https://turtletree-labs-website.appspot.com/getImages/news-' + news.heading.split(' ').join('-') + '1.jpg'}
                          alt="Card image cap" />
                         <CardBody>
-                            <CardTitle style={{height:'125px',overflow:'hidden'}} >{news.heading}</CardTitle>
-                            <p style={{height:'145px',overflow:'hidden'}} className="cardPara">{news.mainDetail}</p>
+                            <CardTitle style={{height:'125px',overflow:'hidden'}} >{news.mainDetail}</CardTitle>
+                            <p style={{height:'145px',overflow:'hidden'}} className="cardPara">{news.paragraphs[0].paragraph}</p>
                             <Button className="cardPara"> <Link style={{color:"#fff"}} 
                             // to={"/news/detail/"+news._id}
                             to={ "/news/detail/"+news.heading.split(' ').join('-') }
